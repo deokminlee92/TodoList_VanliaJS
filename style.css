@@ -1,22 +1,33 @@
-.todoBox {
-  width: 800px;
-  height: 800px;
-  margin: 80px auto;
-  border: 3px solid rgb(203, 229, 252);
-  border-radius: 10px;
-  background-color: aliceblue;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
 }
 
-header {
-  width: 100%;
+.todoBox {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 50px auto;
+  border: 3px solid #f29877;
+  border-radius: 10px;
+}
+
+.todoBox-header {
   display: flex;
   justify-content: center;
-  font-size: 30px;
-  font-weight: 800;
-  background-color: aliceblue;
+  align-items: center;
+  width: 100%;
+  margin: 50px auto;
+  font-size: 26px;
 }
 
+.listBox {
+  width: 100%;
+  position: relative;
+}
 .selectSection {
   display: flex;
   justify-content: center;
@@ -27,7 +38,7 @@ header {
   width: 100px;
   height: 30px;
   margin-right: 15px;
-  border: 2px solid rgb(1, 39, 177);
+  border: none;
   border-radius: 6px;
   font-size: 13px;
   cursor: pointer;
@@ -43,7 +54,7 @@ header {
   width: 100px;
   height: 30px;
   margin-right: 15px;
-  border: 2px solid rgb(1, 122, 177);
+  border: none;
   border-radius: 6px;
   font-size: 13px;
   cursor: pointer;
@@ -59,7 +70,7 @@ header {
   width: 100px;
   height: 30px;
   margin-right: 15px;
-  border: 2px solid rgb(17, 178, 252);
+  border: none;
   border-radius: 6px;
   font-size: 13px;
   cursor: pointer;
@@ -77,12 +88,13 @@ header {
 
 .input_box {
   display: flex;
+  height: 30px;
   justify-content: center;
-  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 .inputTxt {
-  width: 80%;
+  width: 50%;
   padding-bottom: 5px;
   font-size: 15px;
   border: none;
@@ -91,7 +103,9 @@ header {
 }
 
 #addBtn {
-  border: 2px solid rgb(160, 207, 248);
+  width: 10%;
+  margin-left: 2px;
+  border: none;
   border-radius: 5px;
   background-color: rgb(160, 207, 248);
 }
@@ -106,6 +120,7 @@ header {
   overflow: auto;
   font-size: 15px;
   margin: 15px 0;
+  padding-top: 5px;
 }
 
 .list {
@@ -115,7 +130,7 @@ header {
   justify-content: center;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   width: 13px;
   height: 13px;
   margin-right: 20px;
@@ -125,14 +140,17 @@ input[type='checkbox'] {
   cursor: pointer;
 }
 
-input[type='checkbox']:checked {
+input[type="checkbox"]:checked {
   color: white;
 }
 
 .listLb {
-  width: 97%;
+  width: 100%;
   display: inline-block;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .delBtn {
@@ -148,6 +166,9 @@ input[type='checkbox']:checked {
   color: rgb(249, 18, 75);
 }
 
+.allSelect-box {
+  padding: 0 20px;
+}
 .allSelect {
   display: flex;
   justify-content: space-between;
@@ -175,173 +196,10 @@ input[type='checkbox']:checked {
   font-size: 10px;
 }
 
-/* $target-colors: (
-   green-color: #789d34,
-   red-color: #ac3d39,
-   blue-color: #236367,
-); */
-
-/*
-.gray-color {
-  color: #f2ede4;
-}
-.blue-color {
-  color: #30478c;
-}
-.orange-color {
-  color: #f29877;
-}
-.brown-color {
-  color: #8c3f3f;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200&display=swap');
-h1,
-h2,
-p,
-li,
-span {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.Todotitle {
-  font-size: 28px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.box {
-  width: 90%;
-  height: 90%;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* border: 3px black solid; */
-
-.appendbox {
-  position: relative;
-  width: 100%;
-  /* border: 1px green solid; */
-}
-
-.appendbox::after {
-  content: '';
-  display: block;
-}
-
-#todo-form {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-#whattodo {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  font-size: 16px;
-  border: 0;
-  border-radius: 15px;
-  outline: none;
-  padding-left: 10px;
-  background-color: #f2ede4;
-}
-#whattodo:focus {
-  outline: 2px solid #f29877;
-}
-
-#whattodo:focus::placeholder {
-  color: transparent;
-}
-
-#submitbtn {
-  width: 100%;
-  margin-left: 10px;
-  height: 40px;
-  border: none;
-  border-radius: 15px;
-  outline: none;
-  background-color: rgb(233, 233, 233);
-  cursor: pointer;
-  /* border: 2px solid violet; */
-}
-#submitbtn:hover {
-  outline: 2px solid #f29877;
-}
-
-#check {
-  color: #30478c;
-  font-size: 20px;
-  background-color: #f2ede4;
-}
-
-.todo-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  /* border: 3px red solid; */
-  padding-left: 0;
-}
-
-.todo-box::after {
-  content: '';
-  display: block;
-}
-
-.li {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f2ede4;
-  list-style: none;
-  margin: 10px 0;
-  width: 100%;
-  height: 100%;
-  /* border: 2px green solid; */
-  padding: 10px 10px;
-  border-radius: 15px;
-  word-break: break-all;
-  white-space: pre-wrap;
-}
-
-.li:hover {
-  outline: 2px solid #f29877;
-}
-
-.span {
-  width: 100%;
-  height: 100%;
-  font-size: 18px;
-  /* border: 2px solid blue; */
-  word-break: break-all;
-  white-space: pre-wrap;
+.listLb {
+  padding-left: 20px;
 }
 
 .delBtn {
-  width: 40px;
-  border: none;
-  border-radius: 15px;
-  font-size: 20px;
-  color: #30478c;
-  background-color: #f2ede4;
+  margin-right: 20px;
 }
-
-.delBtn:hover {
-  outline: 2px solid #f29877;
-}
-
-/* 
-가장 마지막에 SCSS REFACTORING
-
-*/

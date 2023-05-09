@@ -12,11 +12,11 @@
     <!-- TodoList Box -->
     <div class="todoBox">
       <!-- Header -->
-      <header>
+      <header class="todoBox-header">
         <h1>TodoList</h1>
       </header>
 
-      <div>
+      <div class="listBox">
         <!-- All/Ing/Done -->
         <div class="selectSection">
           <input type="button" class="btn-all" value="All" />
@@ -30,18 +30,20 @@
           <div class="inputBox">
             <div class="input_box">
               <input type="text" class="inputTxt" />
-              <button id="addBtn">+</button>
+              <button id="addBtn">Add</button>
             </div>
           </div>
 
           <!--AllSelect/AllDelete-->
-          <div class="allSelect">
-            <label class="allCheck"
-              ><input type="checkbox" class="allSelect-btn" />All Select</label
-            >
-            <a href="javascript:void(0)" class="allDelete">All Delete</a>
+          <div class="allSelect-box">
+            <div class="allSelect">
+              <label class="allCheck"
+                ><input type="checkbox" class="allSelect-btn" />All
+                Select</label
+              >
+              <a href="javascript:void(0)" class="allDelete">All Delete</a>
+            </div>
           </div>
-
           <!-- Listing -->
           <div class="todo-list"></div>
         </div>
