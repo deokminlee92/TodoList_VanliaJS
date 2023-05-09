@@ -1,15 +1,34 @@
 # TodoList - Exercice VanilaJS
-------------
 
-##
+---
 
-###
+<br>
+<br>
 
-####
+## Below website
 
-## Error 
+---
 
-### caught TypeError: Cannot read properties of null (reading 'length') at HTMLInputElement.<anonymous>
+- [What to do? 🤔](https://deokminlee92.github.io/TodoList_VanliaJS/) << Click!
+  <br>
+  <br>
 
+## Stacks
 
-#### Solution : https://stackoverflow.com/questions/62877175/uncaught-typeerror-cannot-read-property-value-of-undefined-at-htmlinputelemen
+---
+
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<br>
+<br>
+<br>
+
+## Functions
+
+---
+
+- Adding by "enter" key or "click" Add button
+- 3 Buttons for status : All / -Ing / Done
+- All Select / All Delete Button
+- Line-through function
+  <br>
+  <br>
