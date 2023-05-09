@@ -1,21 +1,18 @@
-import './style.css';
-// https://github.com/seoyeon-jung
-
-let addBtn = document.querySelector('#addBtn');
-let inputTxt = document.querySelector('.inputTxt');
-let todo_list = document.querySelector('.todo-list');
-let delTodo = document.querySelectorAll('.delBtn');
-let todoList = document.querySelectorAll('.list');
-let allBtn = document.querySelector('.btn-all');
-let doingBtn = document.querySelector('.btn-doing');
-let doneBtn = document.querySelector('.btn-done');
-let todoCheck = document.querySelector('.todoCheck');
-let allSelectBtn = document.querySelector('.allSelect-btn');
-let allDelete = document.querySelector('.allDelete');
+let addBtn = document.querySelector("#addBtn");
+let inputTxt = document.querySelector(".inputTxt");
+let todo_list = document.querySelector(".todo-list");
+let delTodo = document.querySelectorAll(".delBtn");
+let todoList = document.querySelectorAll(".list");
+let allBtn = document.querySelector(".btn-all");
+let doingBtn = document.querySelector(".btn-doing");
+let doneBtn = document.querySelector(".btn-done");
+let todoCheck = document.querySelector(".todoCheck");
+let allSelectBtn = document.querySelector(".allSelect-btn");
+let allDelete = document.querySelector(".allDelete");
 
 // Adding
-inputTxt.addEventListener('keyup', function (e) {
-  if (e.key === 'Enter') {
+inputTxt.addEventListener("keyup", function (e) {
+  if (e.key === "Enter") {
     addList();
   }
 
@@ -24,7 +21,7 @@ inputTxt.addEventListener('keyup', function (e) {
 });
 
 // Adding2
-addBtn.addEventListener('click', function () {
+addBtn.addEventListener("click", function () {
   addList();
   checkList();
   delList();
@@ -32,31 +29,30 @@ addBtn.addEventListener('click', function () {
 
 // inputTxt control function
 function addList() {
-  if (inputTxt.value !== '') {
+  if (inputTxt.value !== "") {
     // create list <div> & attribute
-    let list = document.createElement('div');
-    list.setAttribute('class', 'list');
+    let list = document.createElement("div");
+    list.setAttribute("class", "list");
     list.innerHTML = `<label class="listLb"><input type="checkbox" class="todoCheck">${inputTxt.value}</label><button class="delBtn">x</button>`;
-
     todo_list.appendChild(list);
-    inputTxt.value = '';
-    inputTxt.style.borderBottom = '1px solid rgb(163, 155, 155)';
+    inputTxt.value = "";
+    inputTxt.style.borderBottom = "1px solid rgb(163, 155, 155)";
   } else {
-    alert('Please input your todoList');
+    alert("Please input your todoList");
   }
 }
 
 // Check List
 function checkList() {
-  todoCheck = document.querySelectorAll('.todoCheck');
-  let listLb = document.querySelectorAll('.listLb');
+  todoCheck = document.querySelectorAll(".todoCheck");
+  let listLb = document.querySelectorAll(".listLb");
 
   todoCheck.forEach((listEl, index) =>
-    listEl.addEventListener('click', function () {
+    listEl.addEventListener("click", function () {
       if (listEl.checked === true) {
-        listLb[index].style.textDecoration = 'line-through';
+        listLb[index].style.textDecoration = "line-through";
       } else {
-        listLb[index].style.textDecoration = 'none';
+        listLb[index].style.textDecoration = "none";
       }
 
       // listCount();
@@ -66,11 +62,11 @@ function checkList() {
 
 // Delete one
 function delList() {
-  delTodo = document.querySelectorAll('.delBtn');
-  todoList = document.querySelectorAll('.list');
+  delTodo = document.querySelectorAll(".delBtn");
+  todoList = document.querySelectorAll(".list");
 
   delTodo.forEach((delEl, index) =>
-    delEl.addEventListener('click', function () {
+    delEl.addEventListener("click", function () {
       todoList[index].remove();
     })
   );
@@ -79,62 +75,65 @@ function delList() {
 }
 
 // Search All
-allBtn.addEventListener('click', function () {
-  todoList = document.querySelectorAll('.list');
+allBtn.addEventListener("click", function () {
+  todoList = document.querySelectorAll(".list");
 
   todoList.forEach((listEl) => {
-    listEl.style.display = '';
+    listEl.style.display = "";
   });
 });
 
 // Search -ing
-doingBtn.addEventListener('click', function () {
-  todoList = document.querySelectorAll('.list');
-
-  for (let i = 0; i < todoCheck.length; i++) {
-    if (todoCheck[i].checked === true) {
-      todoList[i].style.display = 'none';
-    } else {
-      todoList[i].style.display = '';
+doingBtn.addEventListener("click", function () {
+  todoList = document.querySelectorAll(".list");
+  if (todoList[0] != undefined) {
+    for (let i = 0; i < todoCheck.length; i++) {
+      if (todoCheck[i].checked === true) {
+        todoList[i].style.display = "none";
+      } else {
+        todoList[i].style.display = "";
+      }
     }
   }
 });
 
-// 완료
-doneBtn.addEventListener('click', function () {
-  todoList = document.querySelectorAll('.list');
+// Done
+doneBtn.addEventListener("click", function () {
+  todoList = document.querySelectorAll(".list");
 
-  for (let i = 0; i < todoCheck.length; i++) {
-    if (todoCheck[i].checked === true) {
-      todoList[i].style.display = '';
-    } else {
-      todoList[i].style.display = 'none';
+  if (todoList[0] != undefined) {
+    for (let i = 0; i < todoCheck.length; i++) {
+      if (todoCheck[i].checked === true) {
+        todoList[i].style.display = "";
+      } else {
+        todoList[i].style.display = "none";
+      }
     }
   }
 });
 
-// 전체선택
-allSelectBtn.addEventListener('click', function () {
-  todoCheck = document.querySelectorAll('.todoCheck');
-  listLb = document.querySelectorAll('.listLb');
+// All Select
+allSelectBtn.addEventListener("click", function () {
+  todoCheck = document.querySelectorAll(".todoCheck");
+  listLb = document.querySelectorAll(".listLb");
 
   if (allSelectBtn.checked === true) {
-    // 전체선택 클릭 시
+    // All Select Click
     for (let i = 0; i < todoCheck.length; i++) {
       todoCheck[i].checked = true;
-      listLb[i].style.textDecoration = 'line-through';
+      listLb[i].style.textDecoration = "line-through";
     }
   } else {
-    // 전체선택 해제 시
+    // All Select unclick
     for (let i = 0; i < todoCheck.length; i++) {
       todoCheck[i].checked = false;
-      listLb[i].style.textDecoration = '';
+      listLb[i].style.textDecoration = "";
     }
   }
 });
 
-// 전체삭제
-allDelete.addEventListener('click', function () {
-  todo_list.innerHTML = '';
+// AllDelete
+allDelete.addEventListener("click", function () {
+  todo_list.innerHTML = "";
   allSelectBtn.checked = false;
 });
