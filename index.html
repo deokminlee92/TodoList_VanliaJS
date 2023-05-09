@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Todo List V1.1</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <!-- TodoList Box -->
+    <div class="todoBox">
+      <!-- Header -->
+      <header>
+        <h1>TodoList</h1>
+      </header>
+
+      <div>
+        <!-- All/Ing/Done -->
+        <div class="selectSection">
+          <input type="button" class="btn-all" value="All" />
+          <input type="button" class="btn-doing" value="-Ing" />
+          <input type="button" class="btn-done" value="Done" />
+        </div>
+
+        <!-- Input form -->
+        <div class="inputSection">
+          <!--Input box-->
+          <div class="inputBox">
+            <div class="input_box">
+              <input type="text" class="inputTxt" />
+              <button id="addBtn">+</button>
+            </div>
+          </div>
+
+          <!--AllSelect/AllDelete-->
+          <div class="allSelect">
+            <label class="allCheck"
+              ><input type="checkbox" class="allSelect-btn" />All Select</label
+            >
+            <a href="javascript:void(0)" class="allDelete">All Delete</a>
+          </div>
+
+          <!-- Listing -->
+          <div class="todo-list"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
